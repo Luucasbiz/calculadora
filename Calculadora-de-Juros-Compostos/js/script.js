@@ -13,14 +13,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
+            // Cálculo do montante com juros compostos
             const total = value * (1 + fee) ** time;
 
-            document.getElementById('total').innerHTML = "R$ " + total.toFixed(2).replace('.', ',');
+            // Formata o valor final com pontos e vírgula no padrão brasileiro
+            document.getElementById('total').innerHTML = "R$ " + total.toLocaleString('pt-BR', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
         });
     } else {
         console.error("Botão de calcular não encontrado.");
     }
-});
-
-
-
+}); 
