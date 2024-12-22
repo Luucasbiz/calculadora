@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculadora de Juros Compostos para facilitar seus cálculos financeiros.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Juros Compostos</title>
+</head>
+<body>
+    <main id="container" role="main">
+        <div id="calculator">
+            <h2>Calculadora de Juros Compostos</h2>
+            <form id="input_box" onsubmit="return false;">
+                <div class="input-field">
+                    <label for="value">Valor Inicial (capital):</label>
+                    <input type="number" id="value" min="0" step="0.01" pattern="^\d+(\.\d{1,2})?$" aria-describedby="value-help" required>
+                    <small id="value-help">Digite o valor inicial do capital.</small>
+                </div>
+
+                <div class="input-field">
+                    <label for="fee">Taxa de Juros a.m (%):</label>
+                    <input type="number" id="fee" min="0" step="0.01" pattern="^\d+(\.\d{1,2})?$" aria-describedby="fee-help" required>
+                    <small id="fee-help">Informe a taxa de juros mensal em porcentagem.</small>
+                </div>
+
+                <div class="input-field">
+                    <label for="time">Tempo de Rendimento (meses):</label>
+                    <input type="number" id="time" min="1" step="1" pattern="^\d+$" aria-describedby="time-help" required>
+                    <small id="time-help">Especifique o tempo de rendimento em meses.</small>
+                </div>
+            </form>
+
+            <div id="result" role="region" aria-live="polite">
+                <h4>Resultado:</h4>
+                <span id="total">R$ 0,00</span>
+            </div>
+
+            <button id="calculate" type="button">Calcular</button>
+        </div>
+    </main>
+
+    <script type="text/javascript" src="js/script.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
